@@ -1,0 +1,5 @@
+.env
+bin
+Dockerfile
+*.yml
+README.md
