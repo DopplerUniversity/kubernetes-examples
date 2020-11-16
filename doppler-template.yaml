@@ -1,0 +1,20 @@
+projects:
+  - name: kubernetes-testing
+    environments:
+      - slug: 'dev'
+        name: 'Development'
+        configs:
+          - slug: 'dev'
+      - slug: 'prd'
+        name: 'Production'
+        configs:
+          - slug: 'prd'
+    secrets:
+      dev:
+        APP_PORT: 8080
+        APP_API_KEY: 'c390b68c-f66d-4a78-89c5-5502fc56174b'
+        APP_DB_URL: postgres://app:secret@db-dev:5432/app-db
+      prd:
+        APP_PORT: 8080
+        APP_API_KEY: 'b95c0447-e597-47dc-99d6-8a2dd6a8ba02'
+        APP_DB_URL: postgres://app:secret@db-prod:5432/app-db

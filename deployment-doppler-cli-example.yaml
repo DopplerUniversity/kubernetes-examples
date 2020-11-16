@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doppler-cli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doppler-cli
+  template:
+    metadata:
+      labels:
+        app: doppler-cli
+    spec:
+      containers:
+        - name: doppler-cli
+          image: doppleruniversity/doppler-cli
+          imagePullPolicy: IfNotPresent   
+          envFrom:
+            - secretRef:
+                name: doppler-token
+          resources:
+            requests:
+              memory: '256Mi'
+              cpu: '250m'
+            limits:
+              memory: '256Mi'
+              cpu: '250m'
