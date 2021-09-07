@@ -15,7 +15,7 @@ spec:
       containers:
         - name: doppler-cli
           image: doppleruniversity/doppler-cli
-          imagePullPolicy: IfNotPresent   
+          imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
                 name: doppler-token

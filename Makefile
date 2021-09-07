@@ -23,10 +23,10 @@ doppler-token:
 	doppler configs tokens create k8s --plain
 
 deployment:
-	kubectl apply -f deployment-doppler-cli.yaml
+	kubectl apply -f deployment-doppler-cli-example.yaml
 
 cleanup:	
-	@-kubectl delete -f deployment-doppler-cli.yaml
+	@-kubectl delete -f deployment-doppler-cli-example.yaml
 	@-kubectl delete doppler-token
 	@-docker image rm doppleruniversity/doppler-cli
 	@-doppler projects delete -y kubernetes-testing
