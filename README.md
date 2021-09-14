@@ -7,4 +7,7 @@ Doppler is the easiest way to supply secrets to your Kubernetes hosted applicati
 * [Doppler CLI method](./doppler-cli)  
 Uses the Doppler CLI installed in your Docker image to inject secrets as environment variables into your application.
 
+* [Sync TLS Certificates in PEM format](./tls-pem)  
+Uses the Doppler CLI and `kubectl` to sync TLS secrets in PEM format.
+
 Check out our [Kubernetes Doppler integration docs](https://docs.doppler.com/docs/kubernetes) to learn more.

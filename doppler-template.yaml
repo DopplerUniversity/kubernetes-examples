@@ -5,16 +5,63 @@ projects:
         name: 'Development'
         configs:
           - slug: 'dev'
-      - slug: 'prd'
-        name: 'Production'
-        configs:
-          - slug: 'prd'
     secrets:
       dev:
         APP_PORT: '8080'
         APP_API_KEY: 'c390b68c-f66d-4a78-89c5-5502fc56174b'
         APP_DB_URL: postgres://app:secret@db-dev:5432/app-db
-      prd:
-        APP_PORT: '8080'
-        APP_API_KEY: 'b95c0447-e597-47dc-99d6-8a2dd6a8ba02'
-        APP_DB_URL: postgres://app:secret@db-prod:5432/app-db
+        TLS_CERT: |-
+          -----BEGIN CERTIFICATE-----
+          MIIERzCCAq+gAwIBAgIRAMeBhiD9coLaeyNxCwv0y4UwDQYJKoZIhvcNAQELBQAw
+          czEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMSQwIgYDVQQLDBtyYkBS
+          eWFucy1BaXIgKFJ5YW4gQmx1bmRlbikxKzApBgNVBAMMIm1rY2VydCByYkBSeWFu
+          cy1BaXIgKFJ5YW4gQmx1bmRlbikwHhcNMjEwOTEwMDQxODQ1WhcNMjMxMjEwMDQx
+          ODQ1WjBdMScwJQYDVQQKEx5ta2NlcnQgZGV2ZWxvcG1lbnQgY2VydGlmaWNhdGUx
+          MjAwBgNVBAsMKXJiQFJ5YW5zLU1hY0Jvb2stQWlyLmxvY2FsIChSeWFuIEJsdW5k
+          ZW4pMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAntm2EIbauUWpvGiH
+          hqHf6wkemqUJwTyNhwriaupT7y/nx97J+Ocz8l+TQKUCjQMTZkiLz8aDnjXfyiFz
+          J6p5qJwZv2X53mKpl3hVR/AQN4xWj8MMQPz+h/Fppk/PqiBLQzMxx5EQKFgAIwb3
+          7HjNwazM9CfRao1v7tSz0WuIrR8Om1NKdM4VuLFm6Td2STGVjxK8fp45Sqaqw+Ss
+          7aEAyO3CU4fcZvLN0O19MsBtjTjzgpB4OQrD36lox9h2r5WzrMfq5aOmNbky881b
+          n8hxFtplgpqvtiOsWpYgCrElkUKGsiQo+P1UekGZUrsA4y1TR9llop/dfmZHofxQ
+          1/IsFQIDAQABo2wwajAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUH
+          AwEwHwYDVR0jBBgwFoAUYCo2TkYGCr9INd8ViLqz4xAZFsYwIgYDVR0RBBswGYIX
+          ZG9wcGxlcnVuaXZlcnNpdHkubG9jYWwwDQYJKoZIhvcNAQELBQADggGBAGtV6ZjI
+          fXjj/3GHE18kXAnjEX0xWBhAIt6g7fty/y2ALGis9OW0F7MsfHZQAjW0emGerIox
+          irW2SfGP+WZRP9dEyCrkWnIyyv1sh879nconlZUBgPbpVucAtHJb4cS5+vx+nn/e
+          6UJHFr4GX8iGs6f4GIBS70zd4+OXJvPqxrt30UagVrhGJKsmbhhjrEKg8GNG3Z/F
+          TbD16ucKQfWaSzlpYZjeAMVhmuTTXcPJSsS5T4DAE3xFWeidIt8L5H5zT2o9CzVK
+          axIqRjDS2gDqzx2dtvslyeBzLMg77X7VlL8kYrqZ8EXPwlRr25/c7ur3QryYrgUw
+          O+gxwJDzQAVA5yX6wxewDPYxnN/IsLr12Bunna/q3Tv4610BaiF/c48mpZo/Z8+i
+          YI7pdu+U1RDqekQgVnS/NJY4GQyVpbMhVWxDHg9pFPCv1LvTdj2lJFvd5EjAbbpD
+          PXXu6IXic3aE6+2+PIFHSTVAlFRFaQG8xm2fq4BfhReW5KwVjiaISjNPLg==
+          -----END CERTIFICATE-----
+        TLS_KEY: |-
+          -----BEGIN PRIVATE KEY-----
+          MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCe2bYQhtq5Ram8
+          aIeGod/rCR6apQnBPI2HCuJq6lPvL+fH3sn45zPyX5NApQKNAxNmSIvPxoOeNd/K
+          IXMnqnmonBm/ZfneYqmXeFVH8BA3jFaPwwxA/P6H8WmmT8+qIEtDMzHHkRAoWAAj
+          BvfseM3BrMz0J9FqjW/u1LPRa4itHw6bU0p0zhW4sWbpN3ZJMZWPErx+njlKpqrD
+          5KztoQDI7cJTh9xm8s3Q7X0ywG2NOPOCkHg5CsPfqWjH2HavlbOsx+rlo6Y1uTLz
+          zVufyHEW2mWCmq+2I6xaliAKsSWRQoayJCj4/VR6QZlSuwDjLVNH2WWin91+Zkeh
+          /FDX8iwVAgMBAAECggEAQDCz3LvR2Ppom6UV1vbE2GJoBo/YgEiq3D4uvouQfWA7
+          Zk4GCdnL6Q5sH7xOapMqnLOGI+ERQLZ+h1y6/vVpkhP6Z5iavx3ZcEcFFzvQIdJJ
+          DHECG6TgaijIy5cG0LWaFD60x/M7t0HQVFc1ik5Kvw/IBoWsn0UmTTmQrHiq02HN
+          d13S5hkW2g0Urq0SZfMVOuI0Yl1AZPVVBa1i2ZiSiopFCwSDRwNZC7S9XSBIv4Zl
+          VtJXZE7OOBbBF/s6ILWd/EJF+oM1F3cl1EYGYIpcLbxfVtnZ8BfQibFGeicQc/1O
+          5Kd78ntwqt/oBo5HogSwPCV84cG7sv9RKZCpdEc1oQKBgQDKZvte/7NsYoaU7P77
+          3kHmQ1789Xsk1xm3X4+Vp+9Kfjfahiax1XC5HzZas9kem8fZKCROOnmkpZdrsIKs
+          uratuOGTIF4ttH7sgHYKLstIZu0mdjm7vbS4uTozYAe6TKb4Y0Yhea4axLsx7IUO
+          JGzXZ8jBbdlM2y5CfBjQJlsJjQKBgQDI6lBglBXs4qIKbkTwDNPVZtT/pgsqx3WJ
+          2iUK/Hc81Idf5aWfRJXKWRgg5utZp9HbZwB3dMIba1JdxOe0cHh0Ql7dC7g3gofC
+          d/uCItjJS+a9bVKv6xObKClMiR+J65IzJJd6DmZsfA05ge54wnrmwp0WPYwFEH/U
+          4khGz5HWqQKBgQC1q4mk005w0l6J/c9As1XjIEV6N7y4bHmgph1y7rFR48iuVAsX
+          Q8VR5DodX6BaYOkYeXdc4A+fQSKQfnZMI6skcvXF4R+nVoM2NHe+3BGKgxgJlcRs
+          RvKXe2pKAr/s8DBOcozYLyeez0ZWoT0sXHV1QqpnM/n/ihwTgN+ktUixYQKBgQCW
+          +bRCjqTXKAp56hi1hf4cqzQ9kylrEQ0a9KjHU6XKOS4s+qV1RBWHQ2HlP4D1Ey2Y
+          QBNSsJM4BXKUceVnauio/ELKugbI97ZKhNyjEspyoS2XhLIQ7YYDHq/CCnx/qFxp
+          QALvvihrNuC9KQzpA8NU6kMetkskdxyH/S4wv8OoWQKBgEXVni8fy8qsqWmieb1D
+          S4V1jUiI1te5CTCNdH93oyNWcrEYGe57GtjiDv3KprVM+RST77P1q/Dwuvh5HBN+
+          /+ftY/TNZwvCf1DaSnq+lA+LpTb6R12w6fQu9752bpxKvl9RQyZFKAlaxJUN/dh6
+          JZebW28W8WCB/csoxDI/xNDI
+          -----END PRIVATE KEY-----

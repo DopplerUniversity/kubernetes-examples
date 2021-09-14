@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doppler-tls-pem
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doppler-tls-pem
+  template:
+    metadata:
+      labels:
+        app: doppler-tls-pem
+    spec:
+      containers:
+        - name: doppler-tls-pem
+          image: alpine
+          workingDir: /usr/src/app
+          command:
+            - '/bin/sh'
+          args: # Verify certificate
+            - '-c'
+            - 'apk add openssl > /dev/null && 
+              openssl x509 -in secrets/tls.crt -inform pem -noout -text &&
+              tail -f /dev/null'
+          volumeMounts:
+            - name: doppler-tls-pem-volume
+              readOnly: true
+              mountPath: /usr/src/app/secrets
+          resources:
+            limits:
+              memory: '256Mi'
+              cpu: '250m'
+      volumes:
+        - name: doppler-tls-pem-volume
+          secret:
+            secretName: doppler-tls-pem
