@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doppler-pkcs12
+  annotations:
+    secrets.doppler.com/reload: 'true'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doppler-pkcs12
+  template:
+    metadata:
+        labels:
+          app: doppler-pkcs12
+    spec:
+      containers:
+        - name: doppler-pkcs12
+          image: alpine
+          workingDir: /usr/src/app          
+          command:
+            - '/bin/sh'          
+          args: # Install OpenSSL and verify certificate for testing purposes
+            - '-c'
+            - 'apk add openssl > /dev/null && 
+              openssl pkcs12 -in ./secrets/doppler.p12 -nodes -passin pass:"$PKCS12_PASS" | openssl x509 -noout -text && 
+              tail -f /dev/null'          
+          env: # Set PKCS12_PASS environment variable needed to decrypt  certificate
+            - name: PKCS12_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: doppler-pkcs12  # Operator managed secret
+                  key: PKCS12_PASS
+          volumeMounts:
+            - name: doppler-pkcs12-volume
+              readOnly: true
+              mountPath: /usr/src/app/secrets
+          resources:
+            limits:
+              memory: '256Mi'
+              cpu: '250m'
+      volumes:
+        - name: doppler-pkcs12-volume
+          secret:
+            secretName: doppler-pkcs12 # Operator managed secret
+            items: 
+            - key: PKCS12_CERT # Only select the PKCS12_CERT for mounting
+              path: doppler.p12 # Certificate name at mount path
