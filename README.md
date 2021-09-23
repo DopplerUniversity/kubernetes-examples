@@ -1,4 +1,4 @@
-# Kubernetes Integration Examples
+# Kubernetes Doppler Integration Examples
 
 ![Kubernetes Doppler Integration](https://repository-images.githubusercontent.com/312504996/878e5bd6-01b3-4a2d-bd70-c595122f1f3c)
 
