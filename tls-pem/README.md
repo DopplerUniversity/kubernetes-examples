@@ -9,9 +9,7 @@ This tutorial will show you how to sync TLS secrets in PEM format from Doppler t
 
 To follow along with this tutorial, click on the **Import to Doppler** button below to create the Doppler project containing the required variables, including the TLS certificate and key.
 
-<a href="https://dashboard.doppler.com/workplace/template/import?template=https%3A%2F%2Fgithub.com%2FDopplerUniversity%2Fkubernetes-examples%2Fblob%2Fmaster%2Fdoppler-template.yaml"/>
-  <img src="https://raw.githubusercontent.com/DopplerUniversity/app-config-templates/main/doppler-button.svg" alt="Import to Doppler" />
-</a>
+[![Import to Doppler](https://raw.githubusercontent.com/DopplerUniversity/app-config-templates/main/doppler-button.svg)](https://dashboard.doppler.com/workplace/template/import?template=https://github.com/DopplerUniversity/kubernetes-examples/blob/master/tls-pem/doppler-template.yaml')
 
 ## Creating the TLS Certificate and Key Secrets in Doppler
 

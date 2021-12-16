@@ -1,10 +1,10 @@
 projects:
-  - name: kubernetes-testing
+  - name: kubernetes-tls
     environments:
-      - slug: 'dev'
-        name: 'Development'
+      - slug: 'prd'
+        name: 'Production'
         configs:
-          - slug: 'dev'
+          - slug: 'prd'
     secrets:
       dev:
         APP_PORT: '8080'

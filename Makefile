@@ -14,7 +14,7 @@ docker-run:
 
 k8s-project:
 	doppler import
-	doppler setup --no-prompt
+	doppler setup --no-interactive
 
 k8s-seceret:
 	kubectl create secret generic doppler-token --from-literal=DOPPLER_TOKEN="$$(doppler configs tokens create k8s --plain)"

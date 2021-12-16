@@ -37,9 +37,13 @@ Visit the [Kubernetes Operator GitHub repository](https://github.com/DopplerHQ/k
 
 ## Importing the PKCS12 Certificate to Doppler
 
-As the PKCS12 certificate is in binary format, it must be base64 encoded before importing to Doppler.
+To follow along with this tutorial, you can use a pre-configured Doppler Project containing a PKCS12 certificate:
 
-If you haven't yet created a Doppler project, you can use the CLI:
+[![Import to Doppler](https://raw.githubusercontent.com/DopplerUniversity/app-config-templates/main/doppler-button.svg)](https://dashboard.doppler.com/workplace/template/import?template=https://github.com/DopplerUniversity/kubernetes-examples/blob/master/pkcs12/doppler-template.yaml)
+
+Or use the Doppler CLI to manually add the PKCS12 secrets.
+
+If using the CLI, start by creating a Project:
 
 ```sh
 doppler projects create pkcs12
@@ -51,7 +55,7 @@ Select the appropriate environment to import the secret to:
 doppler setup --project pkcs12 --config prd
 ```
 
-Then create the base64 encoded PKCS12 certificate secret:
+As the PKCS12 certificate is in binary format, it must be base64 encoded:
 
 ```sh
 doppler secrets set PKCS12_CERT="$(base64 -i doppler.p12)"
