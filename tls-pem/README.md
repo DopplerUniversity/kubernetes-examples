@@ -16,8 +16,8 @@ To follow along with this tutorial, click on the **Import to Doppler** button be
 You can either use the Doppler dashboard to copy and paste in the contents of your certificate and key, or the Doppler CLI as per below:
 
 ```sh
-doppler secrets set TLS_CERT="$(cat ./tls.cert)"
-doppler secrets set TLS_KEY="$(cat ./tls.key)"
+cat ./tls.cert | doppler secrets set TLS_CERT
+cat ./tls.key | doppler secrets set TLS_KEY
 ```
 
 We recommend using the Doppler CLI to prevent accidental typos from occuring.
