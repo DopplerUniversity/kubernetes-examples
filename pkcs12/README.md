@@ -58,13 +58,13 @@ doppler setup --project pkcs12 --config prd
 As the PKCS12 certificate is in binary format, it must be base64 encoded:
 
 ```sh
-doppler secrets set PKCS12_CERT="$(base64 -i doppler.p12)"
+base64 -i doppler.p12 | doppler secrets set PKCS12_CERT
 ```
 
 If your PKCS12 certificate is password-protected, you'll need to add that too:
 
 ```sh
-doppler secrets set PKCS12_PASS="changeit"
+echo changeit | doppler secrets set PKCS12_PASS
 ```
 
 ## Kubernetes Operator Secrets Sync
